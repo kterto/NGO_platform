@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Página de Login</title>
+
+    <script>
+      // Only attach JS enhancements if the DOM is ready
+      (function () {
+        const form = document.getElementById("loginForm");
+        const submitBtn = document.getElementById("submitLoginBtn");
+        const spinner = document.getElementById("spinner");
+        const status = document.getElementById("status");
+
+        // Helper: simulate network request (mock)
+        function fakePost(formData) {
+          return new Promise((resolve) => {
+            // Simulate 900ms latency
+            setTimeout(() => {
+              // Return a fake success response
+              resolve({ ok: true, redirect: "./projetos.html" });
+            }, 900);
+          });
+        }
+
+        form.addEventListener("submit", async function (e) {
+          // Let native HTML5 check validity first
+          if (!form.checkValidity()) {
+            // If invalid, let browser display validation UI
+            return;
+          }
+
+          e.preventDefault(); // take control (progressive enhancement)
+
+          // Disable UI
+          submitBtn.disabled = true;
+          spinner.classList.remove("hidden");
+          status.textContent = "Entrando...";
+
+          // Collect data using FormData (works with files too)
+          const fd = new FormData(form);
+
+          try {
+            // Use fakePost to mock server. Replace with fetch() for real submission.
+            const res = await fakePost(fd);
+
+            if (res.ok) {
+              status.textContent = "Você está dentro! Redirecionando…";
+
+              // Navigate to success page. Use location.replace so Back won't resubmit
+              // If you want SPA-style replaceState instead, see comment below.
+              window.location.replace(res.redirect || "./projetos.html");
+            } else {
+              // handle server-side errors
+              status.textContent =
+                "Algo deu errado. Tente novamente mais tarde.";
+              submitBtn.disabled = false;
+              spinner.classList.add("hidden");
+            }
+          } catch (err) {
+            status.textContent =
+              "Erro de conexão — por favor teste sua conexão.";
+            submitBtn.disabled = false;
+            spinner.classList.add("hidden");
+          }
+        });
+      })();
+    </script>
+  </head>
+  <body>
+    <header>Entrar</header>
+    <main>
+      <form id="loginForm" action="./projetos.html" method="post">
+        <label for="institution">Instituição:</label>
+        <input
+          type="text"
+          id="institution"
+          name="institution"
+          required
+          minlength="2"
+        />
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+          required
+        />
+        <label for="password">Senha:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+          minlength="5"
+        />
+        <button id="submitLoginBtn" type="submit">Acessar sistema</button>
+        <span id="spinner" class="spinner hidden" aria-hidden="true"></span>
+      </form>
+      <div id="status" class="message" role="status" aria-live="polite"></div>
+    </main>
+  </body>
+</html>

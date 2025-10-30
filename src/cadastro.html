@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Página de Cadastro</title>
+  </head>
+  <body>
+    <header>Cadastro</header>
+    <main>
+      <section>
+        <h1>Cadastre sua ONG</h1>
+        <form action="/auth/sign-up/ngo/">
+          <label for="institution">Nome da Instituição:</label>
+          <input type="text" id="institution" name="institution" />
+          <label for="institution_email">Email Institucional:</label>
+          <input type="email" id="institution_email" name="institution_email" />
+          <label for="stakeholder_email">Email do Gerente:</label>
+          <input type="email" id="stakeholder_email" name="stakeholder_email" />
+          <label for="password">Senha:</label>
+          <input type="password" id="password" name="password" />
+          <button type="submit">Cadastrar no Sistema</button>
+        </form>
+      </section>
+      <h2>OU</h2>
+      <section>
+        <h1>Cadastre-se numa ONG</h1>
+        <form action="/auth/sign-up/">
+          <label for="institution">Nome da Instituição:</label>
+          <input
+            type="text"
+            id="institution_to_register"
+            name="institution_to_register"
+          />
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" />
+          <label for="password">Senha:</label>
+          <input
+            type="password"
+            id="password_to_register"
+            name="password_to_register"
+          />
+          <button type="submit">Cadastrar no Sistema</button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
