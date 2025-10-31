@@ -3,46 +3,301 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+    </style>
+    <style>
+      @import url("../styles/cadastro.css");
+    </style>
     <title>Página de Cadastro</title>
   </head>
   <body>
-    <header>Cadastro</header>
-    <main>
-      <section>
-        <h1>Cadastre sua ONG</h1>
-        <form action="/auth/sign-up/ngo/">
-          <label for="institution">Nome da Instituição:</label>
-          <input type="text" id="institution" name="institution" />
-          <label for="institution_email">Email Institucional:</label>
-          <input type="email" id="institution_email" name="institution_email" />
-          <label for="stakeholder_email">Email do Gerente:</label>
-          <input type="email" id="stakeholder_email" name="stakeholder_email" />
-          <label for="password">Senha:</label>
-          <input type="password" id="password" name="password" />
-          <button type="submit">Cadastrar no Sistema</button>
+    <div class="signup">
+      <div class="signup__header">
+        <div class="signup__icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+            <rect width="24" height="24" rx="6" fill="#2561E8" />
+            <path
+              d="M12 17s-5-3.33-5-7a3 3 0 0 1 6 0 3 3 0 0 1 6 0c0 3.67-5 7-5 7Z"
+              fill="white"
+            />
+          </svg>
+        </div>
+        <h1 class="signup__title">Criar Conta</h1>
+        <p class="signup__subtitle">
+          Junte-se à nossa plataforma para fazer a diferença
+        </p>
+      </div>
+
+      <div class="signup__tabs">
+        <button class="signup__tab signup__tab--active" data-tab="ngo">
+          Criar ONG
+        </button>
+        <button class="signup__tab" data-tab="volunteer">
+          Entrar numa ONG
+        </button>
+      </div>
+
+      <div class="signup__content signup__content--active" data-content="ngo">
+        <form
+          id="signup_ngo_form"
+          class="signup__form"
+          action="./projetos.html"
+          method="post"
+        >
+          <div class="signup__field">
+            <label class="signup__label" for="institution"
+              >Nome da instituição</label
+            >
+            <input
+              class="signup__input"
+              type="text"
+              id="institution"
+              name="institution"
+              placeholder="Entre o nome da sua instituição"
+              required
+              minlength="2"
+            />
+          </div>
+
+          <div class="signup__field">
+            <label class="signup__label" for="institution_email"
+              >Email institucional</label
+            >
+            <input
+              class="signup__input"
+              type="email"
+              id="institution_email"
+              name="institution_email"
+              placeholder="contato@instituicao.org"
+              required
+            />
+          </div>
+
+          <div class="signup__field">
+            <label class="signup__label" for="stakeholder_email"
+              >Email do administrador</label
+            >
+            <input
+              class="signup__input"
+              type="email"
+              id="stakeholder_email"
+              name="stakeholder_email"
+              placeholder="admin@instituicao.org"
+              required
+            />
+          </div>
+
+          <div class="signup__field">
+            <label class="signup__label" for="password">Senha</label>
+            <input
+              class="signup__input"
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Crie uma senha forte"
+              required
+              minlength="5"
+            />
+            <div class="signup__password-strength">
+              <div class="signup__password-strength-bar" id="strengthBar"></div>
+            </div>
+          </div>
+
+          <button class="signup__button" type="submit">
+            Criar uma conta na ONG
+          </button>
         </form>
-      </section>
-      <h2>OU</h2>
-      <section>
-        <h1>Cadastre-se numa ONG</h1>
-        <form action="/auth/sign-up/">
-          <label for="institution">Nome da Instituição:</label>
-          <input
-            type="text"
-            id="institution_to_register"
-            name="institution_to_register"
-          />
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" />
-          <label for="password">Senha:</label>
-          <input
-            type="password"
-            id="password_to_register"
-            name="password_to_register"
-          />
-          <button type="submit">Cadastrar no Sistema</button>
+      </div>
+
+      <!-- Volunteer Signup Form -->
+      <div class="signup__content" data-content="volunteer">
+        <form
+          id="signup_form"
+          class="signup__form"
+          action="./projetos.html"
+          method="post"
+        >
+          <div class="signup__field">
+            <label class="signup__label" for="institution_to_register"
+              >Nome da instituição</label
+            >
+            <input
+              class="signup__input"
+              type="text"
+              id="institution_to_register"
+              name="institution_to_register"
+              placeholder="Entre o nome da instituição"
+              required
+              minlength="2"
+            />
+          </div>
+
+          <div class="signup__field">
+            <label class="signup__label" for="email">Email</label>
+            <input
+              class="signup__input"
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Entre seu email"
+              required
+            />
+          </div>
+
+          <div class="signup__field">
+            <label class="signup__label" for="password_to_register"
+              >Senha</label
+            >
+            <input
+              class="signup__input"
+              type="password"
+              id="password_to_register"
+              name="password_to_register"
+              placeholder="Crie uma senha forte"
+              required
+              minlength="5"
+            />
+            <div class="signup__password-strength">
+              <div
+                class="signup__password-strength-bar"
+                id="strengthBar2"
+              ></div>
+            </div>
+          </div>
+
+          <button class="signup__button" type="submit">Entrar na ONG</button>
         </form>
-      </section>
-    </main>
+      </div>
+
+      <div class="signup__footer">
+        <span class="signup__footer-text">Já tem uma conta?</span>
+        <a href="./entrar.html" class="signup__link">Entrar</a>
+      </div>
+    </div>
+
+    <script>
+      const tabs = document.querySelectorAll(".signup__tab");
+      const contents = document.querySelectorAll(".signup__content");
+      const form = document.getElementById("signup_form");
+      const ngoForm = document.getElementById("signup_form");
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          const targetTab = tab.dataset.tab;
+
+          // Remove active class from all tabs and contents
+          tabs.forEach((t) => t.classList.remove("signup__tab--active"));
+          contents.forEach((c) =>
+            c.classList.remove("signup__content--active")
+          );
+
+          // Add active class to clicked tab and corresponding content
+          tab.classList.add("signup__tab--active");
+          document
+            .querySelector(`[data-content="${targetTab}"]`)
+            .classList.add("signup__content--active");
+        });
+      });
+
+      // Password strength indicator
+      function updatePasswordStrength(passwordInput, strengthBar) {
+        passwordInput.addEventListener("input", (e) => {
+          const password = e.target.value;
+          const strength = calculatePasswordStrength(password);
+
+          strengthBar.className = "signup__password-strength-bar";
+
+          if (password.length === 0) {
+            strengthBar.classList.remove(
+              "signup__password-strength-bar--weak",
+              "signup__password-strength-bar--medium",
+              "signup__password-strength-bar--strong"
+            );
+          } else if (strength < 30) {
+            strengthBar.classList.add("signup__password-strength-bar--weak");
+          } else if (strength < 60) {
+            strengthBar.classList.add("signup__password-strength-bar--medium");
+          } else {
+            strengthBar.classList.add("signup__password-strength-bar--strong");
+          }
+        });
+      }
+
+      function calculatePasswordStrength(password) {
+        let strength = 0;
+
+        if (password.length >= 8) strength += 25;
+        if (password.match(/[a-z]+/)) strength += 15;
+        if (password.match(/[A-Z]+/)) strength += 15;
+        if (password.match(/[0-9]+/)) strength += 20;
+        if (password.match(/[^a-zA-Z0-9]+/)) strength += 25;
+
+        return strength;
+      }
+
+      // Initialize password strength indicators
+      const passwordInput1 = document.getElementById("password");
+      const strengthBar1 = document.getElementById("strengthBar");
+      updatePasswordStrength(passwordInput1, strengthBar1);
+
+      const passwordInput2 = document.getElementById("password_to_register");
+      const strengthBar2 = document.getElementById("strengthBar2");
+      updatePasswordStrength(passwordInput2, strengthBar2);
+
+      const submitBtn = document.getElementsByClassName("signup__button");
+
+      // Helper: simulate network request (mock)
+      function fakePost(formData) {
+        return new Promise((resolve) => {
+          // Simulate 900ms latency
+          setTimeout(() => {
+            // Return a fake success response
+            resolve({ ok: true, redirect: "./projetos.html" });
+          }, 900);
+        });
+      }
+
+      async function handleSubmit(e) {
+        // Let native HTML5 check validity first
+        if (!form.checkValidity()) {
+          // If invalid, let browser display validation UI
+          return;
+        }
+
+        e.preventDefault(); // take control (progressive enhancement)
+
+        // Disable UI
+        submitBtn.disabled = true;
+
+        // Collect data using FormData (works with files too)
+        const fd = new FormData(form);
+
+        try {
+          // Use fakePost to mock server. Replace with fetch() for real submission.
+          const res = await fakePost(fd);
+
+          if (res.ok) {
+            status.textContent = "Você está dentro! Redirecionando…";
+
+            // Navigate to success page. Use location.replace so Back won't resubmit
+            // If you want SPA-style replaceState instead, see comment below.
+            window.location.replace(res.redirect || "./projetos.html");
+          } else {
+            // handle server-side errors
+            status.textContent = "Algo deu errado. Tente novamente mais tarde.";
+            submitBtn.disabled = false;
+            spinner.classList.add("hidden");
+          }
+        } catch (err) {
+          status.textContent = "Erro de conexão — por favor teste sua conexão.";
+          submitBtn.disabled = false;
+          spinner.classList.add("hidden");
+        }
+      }
+
+      form.addEventListener("submit", handleSubmit);
+      ngoForm.addEventListener("submit", handleSubmit);
+    </script>
   </body>
 </html>

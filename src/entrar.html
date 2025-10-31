@@ -3,10 +3,17 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+    </style>
+    <style>
+      @import url("../styles/entrar.css");
+    </style>
+
     <title>Página de Login</title>
 
     <script>
-      // Only attach JS enhancements if the DOM is ready
       (function () {
         const form = document.getElementById("loginForm");
         const submitBtn = document.getElementById("submitLoginBtn");
@@ -69,37 +76,103 @@
     </script>
   </head>
   <body>
-    <header>Entrar</header>
-    <main>
-      <form id="loginForm" action="./projetos.html" method="post">
-        <label for="institution">Instituição:</label>
-        <input
-          type="text"
-          id="institution"
-          name="institution"
-          required
-          minlength="2"
-        />
-        <label for="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
-          required
-        />
-        <label for="password">Senha:</label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          required
-          minlength="5"
-        />
-        <button id="submitLoginBtn" type="submit">Acessar sistema</button>
-        <span id="spinner" class="spinner hidden" aria-hidden="true"></span>
+    <div class="login">
+      <div class="login__header">
+        <div class="login__icon">
+          <i class="fas fa-building"></i>
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+            <rect width="24" height="24" rx="6" fill="#2561E8" />
+            <path
+              d="M12 17s-5-3.33-5-7a3 3 0 0 1 6 0 3 3 0 0 1 6 0c0 3.67-5 7-5 7Z"
+              fill="white"
+            />
+          </svg>
+        </div>
+        <h1 class="login__title">Bem vindo de Volta</h1>
+        <p class="login__subtitle">Entre na sua conta</p>
+      </div>
+
+      <form
+        class="login__form"
+        id="loginForm"
+        action="./projetos.html"
+        method="post"
+      >
+        <div class="login__field">
+          <label class="login__label" for="institution">Instituição</label>
+          <div class="login__input-wrapper">
+            <i class="login__input-icon fas fa-building"></i>
+            <input
+              class="login__input"
+              type="text"
+              id="institution"
+              name="institution"
+              placeholder="Entre a sua instituição"
+              required
+              minlength="2"
+            />
+          </div>
+        </div>
+
+        <div class="login__field">
+          <label class="login__label" for="email">Email</label>
+          <div class="login__input-wrapper">
+            <i class="login__input-icon fas fa-envelope"></i>
+            <input
+              class="login__input"
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Entre seu email"
+              pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="login__field">
+          <label class="login__label" for="password">Senha</label>
+          <div class="login__input-wrapper">
+            <i class="login__input-icon fas fa-lock"></i>
+            <input
+              class="login__input"
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Entre sua senha"
+              required
+              minlength="5"
+            />
+            <button
+              type="button"
+              class="login__toggle-password"
+              aria-label="Toggle password visibility"
+            >
+              <i class="fas fa-eye"></i>
+            </button>
+          </div>
+        </div>
+
+        <button class="login__button" id="submitLoginBtn" type="submit">
+          Sign In
+          <span class="login__spinner" id="spinner" aria-hidden="true"></span>
+        </button>
       </form>
-      <div id="status" class="message" role="status" aria-live="polite"></div>
-    </main>
+
+      <div class="login__footer">
+        <a href="#" class="login__link">Esqueceu a senha?</a>
+        <p class="login__signup">
+          Ainda não tem conta?
+          <a href="#" class="login__signup-link">Cadastrar</a>
+        </p>
+      </div>
+
+      <div
+        class="login__message"
+        id="status"
+        role="status"
+        aria-live="polite"
+      ></div>
+    </div>
   </body>
 </html>

@@ -4,179 +4,402 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Plataforma ONG</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+    </style>
+    <style>
+      @import url("styles/index.css");
+    </style>
   </head>
   <body>
     <nav>
-      <button onclick="window.location.href='./src/entrar.html'">
-        <span>Entrar</span>
-      </button>
-      <button onclick="window.location.href='./src/cadastro.html'">
-        <span>Cadastrar</span>
-      </button>
+      <div id="platform">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+          <rect width="24" height="24" rx="6" fill="#2561E8" />
+          <path
+            d="M12 17s-5-3.33-5-7a3 3 0 0 1 6 0 3 3 0 0 1 6 0c0 3.67-5 7-5 7Z"
+            fill="white"
+          />
+        </svg>
+        <label>Plataforma ONG</label>
+      </div>
+      <div id="actions">
+        <button
+          class="outline-button-primary"
+          onclick="window.location.href='./src/entrar.html'"
+        >
+          <span>Entrar</span>
+        </button>
+        <button
+          class="button-primary"
+          onclick="window.location.href='./src/cadastro.html'"
+        >
+          <span>Cadastrar</span>
+        </button>
+      </div>
     </nav>
     <main>
-      <section>
-        <div>
+      <section class="presentation">
+        <div class="presentation__text">
           <h1>Emponderando ONGs com uma presença digital profissional</h1>
           <p>
             Plataforma completa para gerenciamento de ONG, engajamento de
             voluntários, levantar financiamento, e comunicação de transparência.
             Construa confiança e maximize seu impacto social.
           </p>
-          <button>
-            <span>Começar a plataforma da sua ONG</span>
-          </button>
-          <button>
-            <span>Visualizar Demo</span>
-          </button>
+          <div class="presentation__text__actions">
+            <button class="button-secondary">
+              <span>Começar a plataforma da sua ONG</span>
+            </button>
+            <button class="outline-button-secondary">
+              <span>Visualizar Demo</span>
+            </button>
+          </div>
         </div>
-        <img
-          src="./assets/home.png"
-          alt="Imagem ilustrativa de membros de uma ONG interagindo"
-        />
+        <div class="presentation__image__container">
+          <img
+            src="./assets/home.png"
+            alt="Imagem ilustrativa de membros de uma ONG interagindo"
+          />
+        </div>
       </section>
-      <section>
-        <h2>Feito para todos os tomadores de decisão</h2>
-        <p>
+      <section class="profiles">
+        <h2 class="profiles__title">
+          Feito para todos os tomadores de decisão
+        </h2>
+        <p class="profiles__subtitle">
           Nossa plataforma serve diferentes tipos de usuário com experiência e
           funcionalidades customizadas
         </p>
-        <article>
-          <h3>Administrador de ONG</h3>
-          <ul>
-            <li>Gerenciar informações institucionais</li>
-            <li>Registrar e editar projetos</li>
-            <li>Visualizar métricas de engajamento</li>
-            <li>Gerenciar voluntários</li>
-          </ul>
-        </article>
-        <article>
-          <h3>Voluntário</h3>
-          <ul>
-            <li>Encontrar oportunidades</li>
-            <li>Candidatar-se para projetos</li>
-            <li>Acompanhar participação</li>
-            <li>Dividir experiências</li>
-          </ul>
-        </article>
-        <article>
-          <h3>Doador</h3>
-          <ul>
-            <li>Explorar projetos</li>
-            <li>Doar online</li>
-            <li>Acompanhar impacto</li>
-            <li>Acessar relatórios de transparência</li>
-          </ul>
-        </article>
-        <article>
-          <h3>Visitante</h3>
-          <ul>
-            <li>Conhecer sobre a ONG</li>
-            <li>Visualizar Projetos</li>
-            <li>Acessar galeria</li>
-            <li>Compartilhar conteúdo</li>
-          </ul>
-        </article>
+
+        <div class="profiles__cards">
+          <!-- Admin -->
+          <article class="profiles__card profiles__card--admin">
+            <div class="profiles__icon">
+              <!-- Admin icon -->
+              <svg viewBox="0 0 24 24">
+                <path
+                  fill="white"
+                  d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5C15 14.17 10.33 13 8 13zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"
+                />
+              </svg>
+            </div>
+            <h3 class="profiles__card-title">Administrador de ONG</h3>
+            <ul class="profiles__list">
+              <li>Gerenciar informações institucionais</li>
+              <li>Registrar e editar projetos</li>
+              <li>Visualizar métricas de engajamento</li>
+              <li>Gerenciar voluntários</li>
+            </ul>
+          </article>
+
+          <!-- Volunteer -->
+          <article class="profiles__card profiles__card--volunteer">
+            <div class="profiles__icon">
+              <!-- Volunteer SVG -->
+              <svg viewBox="0 0 24 24">
+                <path
+                  fill="white"
+                  d="M12 2a2 2 0 100 4 2 2 0 000-4zm1 5h-2l-1 7h4l-1-7zm-7.92 6.62l1.42 1.42c.59-.59 1.53-.59 2.12 0l2.12 2.12c.59.59.59 1.53 0 2.12l-1.42 1.42c-.78.78-2.05.78-2.83 0l-3.54-3.54c-.78-.78-.78-2.05 0-2.83zM22 12.83l-3.54 3.54c-.78.78-2.05.78-2.83 0l-1.42-1.42a1.5 1.5 0 010-2.12l2.12-2.12c.59-.59 1.53-.59 2.12 0l1.42 1.42c.78.78.78 2.05 0 2.83z"
+                />
+              </svg>
+            </div>
+            <h3 class="profiles__card-title">Voluntário</h3>
+            <ul class="profiles__list">
+              <li>Encontrar oportunidades</li>
+              <li>Candidatar-se para projetos</li>
+              <li>Acompanhar participação</li>
+              <li>Dividir experiências</li>
+            </ul>
+          </article>
+
+          <!-- Donor -->
+          <article class="profiles__card profiles__card--donator">
+            <div class="profiles__icon">
+              <!-- Donation Hand icon -->
+              <svg viewBox="0 0 24 24">
+                <path
+                  fill="white"
+                  d="M21 11h-6c-.55 0-1 .45-1 1v4h-2v-3H3v8h2v-6h4v6h2v-3h3c.55 0 1-.45 1-1v-4h6v-2zM9 8c1.66 0 2.99-1.34 2.99-3S10.66 2 9 2 6 3.34 6 5s1.34 3 3 3z"
+                />
+              </svg>
+            </div>
+            <h3 class="profiles__card-title">Doador</h3>
+            <ul class="profiles__list">
+              <li>Explorar projetos</li>
+              <li>Doar online</li>
+              <li>Acompanhar impacto</li>
+              <li>Acessar relatórios de transparência</li>
+            </ul>
+          </article>
+
+          <!-- Visitor -->
+          <article class="profiles__card profiles__card--visitor">
+            <div class="profiles__icon">
+              <!-- Visitors icon -->
+              <svg viewBox="0 0 24 24">
+                <path
+                  fill="white"
+                  d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm10 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm-8 0c-.29 0-.62.02-.97.05C7.19 14.42 8 15.55 8 17v2H0v-2.5c0-2.33 4.67-3.5 7-3.5z"
+                />
+              </svg>
+            </div>
+            <h3 class="profiles__card-title">Visitante</h3>
+            <ul class="profiles__list">
+              <li>Conhecer sobre a ONG</li>
+              <li>Visualizar Projetos</li>
+              <li>Acessar galeria</li>
+              <li>Compartilhar conteúdo</li>
+            </ul>
+          </article>
+        </div>
       </section>
-      <section>
-        <h2>Conjunto compreensivo de funcionalidades</h2>
-        <p>Tudo que sua ONG precisa em uma plataforma poderoza</p>
-        <article>
-          <h3>Area Institucional</h3>
-          <p>
-            Apresentação profissional da sua organização com missão, visão,
-            valores, e relatórios de transparência.
-          </p>
-          <ul>
-            <li>Missão e Visão</li>
-            <li>História da Organização</li>
-            <li>Estrutura do Time</li>
-            <li>relatórios de Transparência</li>
-          </ul>
-        </article>
-        <article>
-          <h3>Gerenciamento de Projeto</h3>
-          <p>
-            Gerenciamento do ciclo de vida completo do projeto com documentação
-            detalhada e acompanhamento de impacto.
-          </p>
-          <ul>
-            <li>Registro de Projeto</li>
-            <li>Galeria de Mídia</li>
-            <li>Indicadores de Impacto</li>
-            <li>Sistema de Catgegorias</li>
-          </ul>
-        </article>
-        <article>
-          <h3>Engajamento de voluntários</h3>
-          <p>
-            Sistema de gerenciamento de voluntários compreensivo com portal de
-            oportunidades e certificado digital.
-          </p>
-          <ul>
-            <li>Portal de Oportunidades</li>
-            <li>Sistema de Candidatura</li>
-            <li>Painel do Voluntário</li>
-            <li>Certificados Digitais</li>
-          </ul>
-        </article>
-        <article>
-          <h3>Financiamento</h3>
-          <p>
-            Ferramentas avançadas de levantamento de financiamento com
-            gerenciamento de campanhas e acompanhamento de progresso em
-            tempo-real.
-          </p>
-          <ul>
-            <li>Gerenciamento de Campanhas</li>
-            <li>Doações Online</li>
-            <li>Objetivos em Tempo-Real</li>
-            <li>Relatórios de Confiabilidade</li>
-          </ul>
-        </article>
-        <article>
-          <h3>Comunicação</h3>
-          <p>
-            Ferramentas compreensíveis de comunicação para transparência e
-            engajamento de tomadores de decisão.
-          </p>
-          <ul>
-            <li>Blog de Notícias</li>
-            <li>Sistema de Newsletter</li>
-            <li>Acessoria de Imprensa</li>
-            <li>Central de Documentos</li>
-          </ul>
-        </article>
-        <article>
-          <h3>Design Responsivo</h3>
-          <p>
-            Design <i>mobile-first</i> garantindo experiência perfeita em todos
-            os dispositivos e tamanhos de tela.
-          </p>
-          <ul>
-            <li>Abordagem <i>Mobile-first</i></li>
-            <li>Compatível com Tablet</li>
-            <li>Otimizado para Desktop</li>
-            <li>Mídias Adaptativas</li>
-          </ul>
-        </article>
+      <section class="feature-set">
+        <h2 class="feature-set__title">
+          Conjunto compreensivo de funcionalidades
+        </h2>
+        <p class="feature-set__subtitle">
+          Tudo que sua ONG precisa em uma plataforma poderoza
+        </p>
+
+        <div class="feature-set__grid">
+          <article class="feature-set__card feature-set__card--institutional">
+            <div class="feature-set__icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M3 21V9L12 3l9 6v12h-7v-6H10v6H3z" />
+              </svg>
+            </div>
+            <h3 class="feature-set__card-title">Área Institucional</h3>
+            <p class="feature-set__card-text">
+              Apresentação profissional da sua organização com missão, visão,
+              valores e transparência.
+            </p>
+            <ul class="feature-set__list">
+              <li class="feature-set__list-item">Missão e Visão</li>
+              <li class="feature-set__list-item">História da Organização</li>
+              <li class="feature-set__list-item">Estrutura do Time</li>
+              <li class="feature-set__list-item">
+                Relatórios de Transparência
+              </li>
+            </ul>
+          </article>
+
+          <article class="feature-set__card feature-set__card--projects">
+            <div class="feature-set__icon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M3 3h8v6H3V3zm0 8h8v10H3V11zm10-8h8v13h-8V3zm8 15H13v3h8v-3z"
+                />
+              </svg>
+            </div>
+            <h3 class="feature-set__card-title">Gerenciamento de Projetos</h3>
+            <p class="feature-set__card-text">
+              Acompanhamento completo do ciclo de vida, documentação e
+              indicadores.
+            </p>
+            <ul class="feature-set__list">
+              <li class="feature-set__list-item">Registro de Projeto</li>
+              <li class="feature-set__list-item">Galeria de Mídia</li>
+              <li class="feature-set__list-item">Indicadores de Impacto</li>
+              <li class="feature-set__list-item">Sistema de Categorias</li>
+            </ul>
+          </article>
+
+          <article class="feature-set__card feature-set__card--volunteers">
+            <div class="feature-set__icon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 
+            0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 
+            2c-2.33 0-7 1.17-7 3.5V21h14v-4.5C14 14.17 9.33 13 8 13zm8 
+            0c-.29 0-.62.02-.97.05C16.76 14.17 19 15.28 19 
+            16.5V21h5v-4.5c0-2.33-4.67-3.5-8-3.5z"
+                />
+              </svg>
+            </div>
+            <h3 class="feature-set__card-title">Engajamento de Voluntários</h3>
+            <p class="feature-set__card-text">
+              Portal de oportunidades, aplicação e certificados digitais.
+            </p>
+            <ul class="feature-set__list">
+              <li class="feature-set__list-item">Portal de Oportunidades</li>
+              <li class="feature-set__list-item">Candidatura</li>
+              <li class="feature-set__list-item">Painel do Voluntário</li>
+              <li class="feature-set__list-item">Certificados Digitais</li>
+            </ul>
+          </article>
+
+          <article class="feature-set__card feature-set__card--funding">
+            <div class="feature-set__icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M13 6a2 2 0 1 1 4 0a2 2 0 0 1-4 0m4 4h-4a2 2 0 0 0-2 2v1H3v7h2v-5h4v5h2v-3h2v3h2v-3.5c0-.28.22-.5.5-.5H20a1 1 0 0 0 1-1v-2a3 3 0 0 0-3-3z"
+                />
+              </svg>
+            </div>
+            <h3 class="feature-set__card-title">Financiamento</h3>
+            <p class="feature-set__card-text">
+              Ferramentas avançadas de levantamento de financiamento com
+              gerenciamento de campanhas e acompanhamento de progresso em
+              tempo-real.
+            </p>
+            <ul class="feature-set__list">
+              <li class="feature-set__list-item">Gerenciamento de Campanhas</li>
+              <li class="feature-set__list-item">Doações Online</li>
+              <li class="feature-set__list-item">Objetivos em Tempo-Real</li>
+              <li class="feature-set__list-item">
+                Relatórios de Confiabilidade
+              </li>
+            </ul>
+          </article>
+          <article class="feature-set__card feature-set__card--comunication">
+            <div class="feature-set__icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 3a9 9 0 0 1 8.66 6.5H19A7 7 0 0 0 5 11a7 7 0 0 0 7 7h1v2h-1a9 9 0 0 1 0-18m5 9l4 4h-3v5h-2v-5H13l4-4z"
+                />
+              </svg>
+            </div>
+            <h3 class="feature-set__card-title">Comunicação</h3>
+            <p class="feature-set__card-text">
+              Ferramentas compreensíveis de comunicação para transparência e
+              engajamento de tomadores de decisão.
+            </p>
+            <ul class="feature-set__list">
+              <li class="feature-set__list-item">Blog de Notícias</li>
+              <li class="feature-set__list-item">Sistema de Newsletter</li>
+              <li class="feature-set__list-item">Acessoria de Imprensa</li>
+              <li class="feature-set__list-item">Central de Documentos</li>
+            </ul>
+          </article>
+          <article class="feature-set__card feature-set__card--design">
+            <div class="feature-set__icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M4 5h14v10H4V5m-2 0a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5m6 14v-2h8v2H8m12-8h3v10h-3V11m1 2v6h1v-6h-1z"
+                />
+              </svg>
+            </div>
+            <h3 class="feature-set__card-title">Design Responsivo</h3>
+            <p class="feature-set__card-text">
+              Design <i>mobile-first</i> garantindo experiência perfeita em
+              todos os dispositivos e tamanhos de tela.
+            </p>
+            <ul class="feature-set__list">
+              <li class="feature-set__list-item">
+                Abordagem <i>Mobile-first</i>
+              </li>
+              <li class="feature-set__list-item">Compatível com Tablet</li>
+              <li class="feature-set__list-item">Otimizado para Desktop</li>
+              <li class="feature-set__list-item">Mídias Adaptativas</li>
+            </ul>
+          </article>
+        </div>
       </section>
-      <section>
-        <h2>Pronto para transformar a presença digital da sua ONG?</h2>
-        <p>
+      <section class="cta">
+        <h2 class="cta__title">
+          Pronto para transformar a presença digital da sua ONG?
+        </h2>
+
+        <p class="cta__subtitle">
           Se junte a centenas de ONGs que já usam nossa plataforma para
           maximizar o seu impacto social e construir comunidades mais fortes.
         </p>
-        <button><span>Começar Teste Grátis</span></button>
-        <button><span>Agendar Demo</span></button>
+
+        <div class="cta__actions">
+          <button class="button-secondary">Começar Teste Grátis</button>
+
+          <button class="outline-button-secondary">Agendar Demo</button>
+        </div>
       </section>
     </main>
-    <footer>
-      <h4>Conecção ONG</h4>
-      <p>
-        Empoderando ONGs com prataformas web profissionais para maximizar seu
-        impacto social e construir comunidades mais fortes.
-      </p>
+    <footer class="footer">
+      <div class="footer__container">
+        <div class="footer__brand">
+          <div class="footer__logo">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+              <rect width="24" height="24" rx="6" fill="#2561E8" />
+              <path
+                d="M12 17s-5-3.33-5-7a3 3 0 0 1 6 0 3 3 0 0 1 6 0c0 3.67-5 7-5 7Z"
+                fill="white"
+              />
+            </svg>
+            <span>Plataforma ONG</span>
+          </div>
+
+          <p class="footer__text">
+            Empoderando ONGs com plataformas web profissionais para maximizar
+            seu impacto social e construir comunidades mais fortes.
+          </p>
+
+          <div class="footer__social">
+            <a href="#" aria-label="Facebook" class="footer__social__icon">
+              <svg
+                width="18"
+                height="18"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M22 12.07C22 6.49 17.52 2 12 2S2 6.49 2 12.07c0 5 3.66 9.14 8.44 9.93v-7.02h-2.54v-2.9h2.54V9.75c0-2.5 1.49-3.88 3.78-3.88 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.62.78-1.62 1.57v1.88h2.77l-.44 2.9h-2.33v7.02C18.34 21.21 22 17.07 22 12.07Z"
+                />
+              </svg>
+            </a>
+
+            <a href="#" aria-label="Twitter" class="footer__social__icon">
+              <svg
+                width="18"
+                height="18"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M23 3s-2 .9-3 1a4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83C21 6 22 5 23 3Z"
+                />
+              </svg>
+            </a>
+
+            <a href="#" aria-label="LinkedIn" class="footer__social__icon">
+              <svg
+                width="18"
+                height="18"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5ZM3 9h4v12H3Zm7 0h3.8v1.71h.06A4.15 4.15 0 0 1 18.5 9c3.06 0 4.5 2.06 4.5 5.15V21h-4V15c0-1.44-.03-3.28-2-3.28-2 0-2.31 1.57-2.31 3.18V21h-4Z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer__links">
+          <div class="footer__column">
+            <h5 class="footer__heading">Plataforma</h5>
+            <a href="#">Funcionalidades</a>
+            <a href="#">Planos</a>
+            <a href="#">Demo</a>
+            <a href="#">Documentação</a>
+          </div>
+
+          <div class="footer__column">
+            <h5 class="footer__heading">Suporte</h5>
+            <a href="#">Central de Ajuda</a>
+            <a href="#">Contato</a>
+            <a href="#">Treinamento</a>
+            <a href="#">Comunidade</a>
+          </div>
+
+          <div class="footer__column">
+            <h5 class="footer__heading">Empresa</h5>
+            <a href="#">Sobre</a>
+            <a href="#">Blog</a>
+            <a href="#">Carreiras</a>
+            <a href="#">Política de Privacidade</a>
+          </div>
+        </div>
+      </div>
     </footer>
   </body>
 </html>

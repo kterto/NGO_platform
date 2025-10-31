@@ -11,3 +11,7 @@ A disciplina espera a entrega de quatro práticas que serão colocadas em branch
 ### Entrega I
 
 Estrutura do sistema com página inicial `index.html`, página para login `entrar.html`, página de cadastro `cadastro.html` e página de projetos `projetos.html`. A estrutura é desenvolvida de maneira semântica mas ainda sem estilização. Os botões no `<nav>` da home levam para as páginas de login e cadastro, a tela de login leva para a tela de projetos. 
+
+### Entrega II
+
+Estrutura e estilização do sistema com página inicial `index.html`, página para login `entrar.html`, página de cadastro `cadastro.html` e página de projetos `projetos.html`. A estrutura é desenvolvida de maneira semântica. Os botões no `<nav>` da home levam para as páginas de login e cadastro, a tela de login leva para a tela de projetos. 
