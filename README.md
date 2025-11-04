@@ -15,3 +15,7 @@ Estrutura do sistema com página inicial `index.html`, página para login `entra
 ### Entrega II
 
 Estrutura e estilização do sistema com página inicial `index.html`, página para login `entrar.html`, página de cadastro `cadastro.html` e página de projetos `projetos.html`. A estrutura é desenvolvida de maneira semântica. Os botões no `<nav>` da home levam para as páginas de login e cadastro, a tela de login leva para a tela de projetos. 
+
+### Entrega III
+
+Javascript adicionando interatividade ao sistema. O código está separado em `scripts/*` e cada página possui seu script separado.
