@@ -1,7 +1,7 @@
 # Presença digital ONG
 
 ## Descrição
-Projeto da disciplina de Desenvolvimento Frontend para Web. A plataforma será um sistema web completo que oferece às ONGs uma presença digital profissional e funcional.
+Projeto da disciplina de Desenvolvimento Frontend para Web. A plataforma será um sistema web completo que oferece às ONGs uma presença digital profissional e funcional. Projeto deployado em `https://singular-kashata-5157a8.netlify.app/` para avaliação.
 
 ## Tecnologias Utilizadas
 - html
