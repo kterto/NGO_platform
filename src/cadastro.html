@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+    </style>
+    <style>
+      @import url("../styles/cadastro.css");
+    </style>
+    <title>Página de Cadastro</title>
+  </head>
+  <body>
+    <div class="signup">
+      <div class="signup__header">
+        <div class="signup__icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+            <rect width="24" height="24" rx="6" fill="#2561E8" />
+            <path
+              d="M12 17s-5-3.33-5-7a3 3 0 0 1 6 0 3 3 0 0 1 6 0c0 3.67-5 7-5 7Z"
+              fill="white"
+            />
+          </svg>
+        </div>
+        <h1 class="signup__title">Criar Conta</h1>
+        <p class="signup__subtitle">
+          Junte-se à nossa plataforma para fazer a diferença
+        </p>
+      </div>
+
+      <div class="signup__tabs">
+        <button class="signup__tab signup__tab--active" data-tab="ngo">
+          Criar ONG
+        </button>
+        <button class="signup__tab" data-tab="volunteer">
+          Entrar numa ONG
+        </button>
+      </div>
+
+      <div class="signup__content signup__content--active" data-content="ngo">
+        <form
+          id="signup_ngo_form"
+          class="signup__form"
+          action="./projetos.html"
+          method="post"
+        >
+          <div class="signup__field">
+            <label class="signup__label" for="institution"
+              >Nome da instituição</label
+            >
+            <input
+              class="signup__input"
+              type="text"
+              id="institution"
+              name="institution"
+              placeholder="Entre o nome da sua instituição"
+              required
+              minlength="2"
+            />
+          </div>
+
+          <div class="signup__field">
+            <label class="signup__label" for="institution_email"
+              >Email institucional</label
+            >
+            <input
+              class="signup__input"
+              type="email"
+              id="institution_email"
+              name="institution_email"
+              placeholder="contato@instituicao.org"
+              required
+            />
+          </div>
+
+          <div class="signup__field">
+            <label class="signup__label" for="stakeholder_email"
+              >Email do administrador</label
+            >
+            <input
+              class="signup__input"
+              type="email"
+              id="stakeholder_email"
+              name="stakeholder_email"
+              placeholder="admin@instituicao.org"
+              required
+            />
+          </div>
+
+          <div class="signup__field">
+            <label class="signup__label" for="password">Senha</label>
+            <input
+              class="signup__input"
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Crie uma senha forte"
+              required
+              minlength="5"
+            />
+            <div class="signup__password-strength">
+              <div class="signup__password-strength-bar" id="strengthBar"></div>
+            </div>
+          </div>
+
+          <button class="signup__button" type="submit">
+            Criar uma conta na ONG
+          </button>
+        </form>
+      </div>
+
+      <!-- Volunteer Signup Form -->
+      <div class="signup__content" data-content="volunteer">
+        <form
+          id="signup_form"
+          class="signup__form"
+          action="./projetos.html"
+          method="post"
+        >
+          <div class="signup__field">
+            <label class="signup__label" for="institution_to_register"
+              >Nome da instituição</label
+            >
+            <input
+              class="signup__input"
+              type="text"
+              id="institution_to_register"
+              name="institution_to_register"
+              placeholder="Entre o nome da instituição"
+              required
+              minlength="2"
+            />
+          </div>
+
+          <div class="signup__field">
+            <label class="signup__label" for="email">Email</label>
+            <input
+              class="signup__input"
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Entre seu email"
+              required
+            />
+          </div>
+
+          <div class="signup__field">
+            <label class="signup__label" for="password_to_register"
+              >Senha</label
+            >
+            <input
+              class="signup__input"
+              type="password"
+              id="password_to_register"
+              name="password_to_register"
+              placeholder="Crie uma senha forte"
+              required
+              minlength="5"
+            />
+            <div class="signup__password-strength">
+              <div
+                class="signup__password-strength-bar"
+                id="strengthBar2"
+              ></div>
+            </div>
+          </div>
+
+          <button class="signup__button" type="submit">Entrar na ONG</button>
+        </form>
+      </div>
+
+      <div class="signup__footer">
+        <span class="signup__footer-text">Já tem uma conta?</span>
+        <a href="./entrar.html" class="signup__link">Entrar</a>
+      </div>
+    </div>
+
+    <script src="../scripts/cadastro.js"></script>
+  </body>
+</html>
