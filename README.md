@@ -1,6 +1,19 @@
-# Projeto da disciplina de Desenvolvimento Frontend para Web
+# Presença digital ONG
 
-A plataforma será um sistema web completo que oferece às ONGs uma presença digital profissional e funcional.
+## Descrição
+Projeto da disciplina de Desenvolvimento Frontend para Web. A plataforma será um sistema web completo que oferece às ONGs uma presença digital profissional e funcional.
+
+## Tecnologias Utilizadas
+- html
+- css
+- javascript
+
+## Execução
+Abrir `index.html` em navegador web. 
+
+## Estrutura do Projeto
+A página inicial para o sistema se encontra em `index.html`, as demais páginas se encontram em `src/*.html`. Todos os assets utlizados se encontram em `/assets`. Os scripts javascript usados para 
+criar dinamismo e funcionalidade nos formulários se encontram em `/scripts`, por fim a estilização das páginas foi feita via css e os arquivos estão em `/styles`.
 
 ## Entregas
 
@@ -18,4 +31,13 @@ Estrutura e estilização do sistema com página inicial `index.html`, página p
 
 ### Entrega III
 
-Javascript adicionando interatividade ao sistema. O código está separado em `scripts/*` e cada página possui seu script separado.
+Javascript adicionando interatividade ao sistema. O código está separado em `scripts/*` e cada página possui seu script separado.# Nome do Projeto
+
+### Entrega IV
+
+Refatoração do `README`. Pull request do código final para a `main` e adição de licença. 
+
+## Licença
+
+Licensed under the MIT License — please attribute to K. Terto.
+
